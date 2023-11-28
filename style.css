@@ -1,0 +1,141 @@
+:root {
+  --Drenthe: #bfbfbf;
+  --Overijssel: #bfbfbf;
+  --North_Holland: #bfbfbf;
+  --South_Holland: #bfbfbf;
+  --Gelderland: #bfbfbf;
+  --Limburg: #bfbfbf;
+  --Zeeland: #bfbfbf;
+  --Groningen: #bfbfbf;
+  --Utrecht: #bfbfbf;
+  --Flevoland: #bfbfbf;
+  --Friesland: #bfbfbf;
+  --North_Brabant: #bfbfbf;
+
+  padding-top: 5%;
+  padding-bottom: 5%;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+}
+
+/* Header */
+h1 {
+  text-align: center;
+}
+
+/* Map */
+#map {
+  display: flex;
+  justify-content: center;
+  padding-top: 10%;
+  padding-bottom: 5%;
+}
+
+/* Floating left total percentage rectangle */
+.total-percentage-rectangle {
+  position: absolute;
+  top: 12%;
+  left: 0;
+  padding: 3%;
+  width: 30%;
+  background-color: #00346d;
+  border-radius: 0px 10% 10% 0px;
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+}
+
+.description-white-text {
+  color: white;
+  font-weight: bold;
+  font-size: 4vw;
+}
+
+#percentage {
+  text-align: center;
+  font-weight: bold;
+  font-size: 7vw;
+  margin-bottom: 8px;
+  color: #f6ba0a;
+}
+
+/* Province line */
+.city-set {
+  margin-bottom: 4%;
+}
+
+.city-set-province {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  background-color: #f6ba0a;
+  width: 100%;
+}
+
+.province-name {
+  margin-left: 5%;
+  text-align: left;
+}
+
+.province-percentage {
+  margin-right: 5%;
+  text-align: right;
+}
+
+/* Cities list */
+h3 {
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-size: 5.5vw;
+}
+
+.city-set-cities {
+  margin-top: 4%;
+  font-size: 5vw;
+}
+
+.animated-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: 5%;
+  padding-bottom: 1%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.animated-checkbox input[type="checkbox"] {
+  display: none;
+}
+
+.checkbox {
+  width: 6vw;
+  height: 6vw;
+  border: 0.7vw solid #f6ba0a;
+  border-radius: 25%;
+  margin-right: 4%;
+  transition: background-color 0.3s;
+}
+
+.animated-checkbox input[type="checkbox"]:checked ~ .checkbox {
+  background-color: #f6ba0a;
+}
+
+.animated-checkbox input[type="checkbox"]:checked ~ span {
+  font-weight: bold;
+}
+
+#hint {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #00346d;
+  font-weight: bold;
+  font-size: 4vw;
+}
