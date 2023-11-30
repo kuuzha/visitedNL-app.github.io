@@ -324,20 +324,36 @@ svg.addEventListener("click", function (event) {
   setTimeout(hideHint, 3000);
 });
 
-window.addEventListener("scroll", function () {
-  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  var mapSvg = document.getElementById("map-svg");
-  var hints = document.getElementsByClassName("hint");
+var mapSvg = document.getElementById("map-svg");
+var hints = document.getElementsByClassName("hint");
+var targetWidth = 40;
+var animation;
 
-  if (scrollTop > 0) {
-    mapSvg.style.width = "40%";
-    hideHint();
-  } else {
-    var mapSvgWidth =
-      85 -
-      (scrollTop /
-        (document.documentElement.scrollHeight - window.innerHeight)) *
-        60;
-    mapSvg.style.width = mapSvgWidth + "%";
+var isTouching = false;
+
+window.addEventListener("scroll", function () {
+  if (!isTouching) {
+    cancelAnimationFrame(animation);
+    animation = requestAnimationFrame(animateMap);
   }
 });
+
+window.addEventListener("touchstart", function () {
+  isTouching = true;
+});
+
+window.addEventListener("touchend", function () {
+  isTouching = false;
+  cancelAnimationFrame(animation);
+  animation = requestAnimationFrame(animateMap);
+});
+
+function animateMap() {
+  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  hideHint();
+  if (scrollTop <= 1) {
+    mapSvg.style.width = "85%";
+  } else {
+    mapSvg.style.width = "40%";
+  }
+}

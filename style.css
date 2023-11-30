@@ -12,7 +12,6 @@
   --Friesland: #bfbfbf;
   --North_Brabant: #bfbfbf;
 
-  padding-top: 5%;
   padding-bottom: 5%;
 }
 
@@ -24,7 +23,7 @@ body {
 /* Header */
 h1 {
   text-align: center;
-  padding: 6% 0 4% 0;
+  padding: 7% 0 4% 0;
   margin: 0;
 }
 
@@ -39,7 +38,7 @@ h1 {
 #map-svg {
   width: 85%;
   height: auto;
-  transition: width 0.3s ease;
+  transition: width 0.0001s ease;
 }
 
 /* Floating left total percentage rectangle */
@@ -72,7 +71,7 @@ h1 {
 
 /* Province line */
 .city-set {
-  margin-bottom: 4%;
+  margin-bottom: 7%;
   margin-top: -5vw;
 }
 
