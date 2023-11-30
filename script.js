@@ -61,7 +61,7 @@ const provinces = {
     visitedCount: 0
   },
   South_Holland: {
-    cities: ["rotterdam", "denhaag", "leiden", "dordrecht"],
+    cities: ["rotterdam", "den haag", "leiden", "dordrecht"],
     visitedCount: 0
   },
   Utrecht: {
@@ -119,6 +119,11 @@ for (const provinceName in provinces) {
       .split("-")
       .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
       .join("-");
+
+    cityName.textContent = city
+      .split(" ")
+      .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+      .join(" ");
 
     cityLabel.appendChild(cityCheckbox);
     cityLabel.appendChild(cityCheckboxDiv);
@@ -284,7 +289,7 @@ function getProvincePercentage(provinceName) {
 initializeApp();
 
 // Get references to the SVG paths and hint element
-const svg = document.getElementById("map");
+const svg = document.getElementById("map-svg");
 const hint = document.getElementById("hint");
 
 // Function to show the hint with the path class
@@ -322,4 +327,22 @@ svg.addEventListener("click", function (event) {
 
   // Hide the hint after a certain duration (e.g., 3 seconds)
   setTimeout(hideHint, 3000);
+});
+
+window.addEventListener("scroll", function () {
+  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  var mapSvg = document.getElementById("map-svg");
+  var hints = document.getElementsByClassName("hint");
+
+  if (scrollTop > 0) {
+    mapSvg.style.width = "40%";
+    hideHint();
+  } else {
+    var mapSvgWidth =
+      85 -
+      (scrollTop /
+        (document.documentElement.scrollHeight - window.innerHeight)) *
+        60;
+    mapSvg.style.width = mapSvgWidth + "%";
+  }
 });
