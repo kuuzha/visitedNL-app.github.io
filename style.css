@@ -12,7 +12,7 @@
   --Friesland: #bfbfbf;
   --North_Brabant: #bfbfbf;
 
-  padding-bottom: 5%;
+  padding-bottom: 2%;
 }
 
 body {
@@ -33,12 +33,13 @@ h1 {
   justify-content: center;
   padding-top: 10%;
   padding-bottom: 5%;
+  transition: height 0.5s ease;
 }
 
 #map-svg {
   width: 85%;
   height: auto;
-  transition: width 0.0001s ease;
+  transition: width 0.5s ease;
 }
 
 /* Floating left total percentage rectangle */
@@ -170,6 +171,6 @@ h3 {
   top: 0;
   background: white;
   border-radius: 0px 0px 10px 10px;
-  box-shadow: 0 3vw 3vw rgb(0 0 0 / 0.2);
+  box-shadow: 0 3vw 3vw rgb(0 0 0 / 0.1);
   z-index: 2;
 }
