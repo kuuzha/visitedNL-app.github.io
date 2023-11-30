@@ -61,7 +61,7 @@ const provinces = {
     visitedCount: 0
   },
   South_Holland: {
-    cities: ["rotterdam", "den haag", "leiden", "dordrecht"],
+    cities: ["rotterdam", "denhaag", "leiden", "dordrecht"],
     visitedCount: 0
   },
   Utrecht: {
@@ -119,11 +119,6 @@ for (const provinceName in provinces) {
       .split("-")
       .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
       .join("-");
-
-    cityName.textContent = city
-      .split(" ")
-      .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-      .join(" ");
 
     cityLabel.appendChild(cityCheckbox);
     cityLabel.appendChild(cityCheckboxDiv);
@@ -289,7 +284,7 @@ function getProvincePercentage(provinceName) {
 initializeApp();
 
 // Get references to the SVG paths and hint element
-const svg = document.getElementById("map-svg");
+const svg = document.getElementById("map");
 const hint = document.getElementById("hint");
 
 // Function to show the hint with the path class

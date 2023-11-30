@@ -11,6 +11,9 @@
   --Flevoland: #bfbfbf;
   --Friesland: #bfbfbf;
   --North_Brabant: #bfbfbf;
+
+  padding-top: 5%;
+  padding-bottom: 5%;
 }
 
 body {
@@ -29,8 +32,8 @@ h1 {
 #map {
   display: flex;
   justify-content: center;
-  padding-bottom: 25px;
-  width: 100%;
+  padding-top: 10%;
+  padding-bottom: 5%;
 }
 
 #map-svg {
@@ -42,12 +45,12 @@ h1 {
 /* Floating left total percentage rectangle */
 .total-percentage-rectangle {
   position: absolute;
-  top: 15%;
+  top: 12%;
   left: 0;
-  padding: 2%;
+  padding: 3%;
   width: 30%;
   background-color: #00346d;
-  border-radius: 0px 10px 10px 0px;
+  border-radius: 0px 10% 10% 0px;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -56,25 +59,21 @@ h1 {
 .description-white-text {
   color: white;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 4vw;
 }
 
 #percentage {
   text-align: center;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 7vw;
   margin-bottom: 8px;
   color: #f6ba0a;
 }
 
 /* Province line */
-#citySetContainer {
-  margin: 0 auto;
-}
-
 .city-set {
-  margin-bottom: 20px;
-  margin-top: -10px;
+  margin-bottom: 4%;
+  margin-top: -5vw;
 }
 
 .city-set-province {
@@ -83,8 +82,8 @@ h1 {
   align-items: baseline;
   background-color: #f6ba0a;
   width: 100%;
-  border-radius: 0 0 10px 10px;
-  padding-top: 10px;
+  border-radius: 0 0 5vw 5vw;
+  padding-top: 4vw;
   position: relative;
   overflow: hidden;
   z-index: 1;
@@ -96,37 +95,41 @@ h1 {
   top: -5px;
   left: 0;
   width: 100%;
-  height: 10px;
+  height: 4vw;
   background-color: white;
-  border-radius: 0 0 10px 10px;
+  border-radius: 0 0 6vw 6vw;
   z-index: -1;
 }
 
 .province-name {
-  margin-left: 20px;
+  margin-left: 5%;
   text-align: left;
 }
 
 .province-percentage {
-  margin-right: 20px;
+  margin-right: 5%;
   text-align: right;
 }
 
 /* Cities list */
 h3 {
-  margin-top: 5px;
-  margin-bottom: 5px;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  font-size: 5.5vw;
 }
 
 .city-set-cities {
-  margin-top: 10px;
+  margin-top: 4%;
+  font-size: 5vw;
 }
 
 .animated-checkbox {
   display: flex;
   align-items: center;
   cursor: pointer;
-  margin-left: 20px;
+  margin-left: 5%;
+  padding-bottom: 1%;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .animated-checkbox input[type="checkbox"] {
@@ -134,11 +137,11 @@ h3 {
 }
 
 .checkbox {
-  width: 20px;
-  height: 20px;
-  border: 2px solid #f6ba0a;
-  border-radius: 8px;
-  margin-right: 10px;
+  width: 6vw;
+  height: 6vw;
+  border: 0.7vw solid #f6ba0a;
+  border-radius: 25%;
+  margin-right: 4%;
   transition: background-color 0.3s;
 }
 
@@ -156,11 +159,11 @@ h3 {
   left: 0;
   display: none;
   padding: 5px;
-  border-radius: 10px;
+  border-radius: 10%;
   background-color: rgba(255, 255, 255, 0.2);
   color: #00346d;
   font-weight: bold;
-  font-size: 16px;
+  font-size: 4vw;
 }
 
 #sticky-part {
@@ -168,6 +171,6 @@ h3 {
   top: 0;
   background: white;
   border-radius: 0px 0px 10px 10px;
-  box-shadow: 0 5px 10px rgb(0 0 0 / 0.2);
+  box-shadow: 0 3vw 3vw rgb(0 0 0 / 0.2);
   z-index: 2;
 }
