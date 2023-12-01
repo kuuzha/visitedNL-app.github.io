@@ -325,19 +325,13 @@ svg.addEventListener("click", function (event) {
 });
 
 window.addEventListener("scroll", function () {
-  var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  var scrollTop = window.pageYOffset;
   var mapSvg = document.getElementById("map-svg");
   var hints = document.getElementsByClassName("hint");
-
-  if (scrollTop > 0) {
-    mapSvg.style.width = "40%";
-    hideHint();
+  hideHint();
+  if (scrollTop <= 0) {
+    mapSvg.style.width = "85%";
   } else {
-    var mapSvgWidth =
-      85 -
-      (scrollTop /
-        (document.documentElement.scrollHeight - window.innerHeight)) *
-        60;
-    mapSvg.style.width = mapSvgWidth + "%";
+    mapSvg.style.width = "40%";
   }
 });
