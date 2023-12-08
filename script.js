@@ -61,7 +61,7 @@ const provinces = {
     visitedCount: 0
   },
   South_Holland: {
-    cities: ["rotterdam", "denhaag", "leiden", "dordrecht"],
+    cities: ["rotterdam", "den haag", "leiden", "dordrecht"],
     visitedCount: 0
   },
   Utrecht: {
@@ -115,10 +115,20 @@ for (const provinceName in provinces) {
     cityCheckboxDiv.classList.add("checkbox");
 
     const cityName = document.createElement("span");
-    cityName.textContent = city
-      .split("-")
-      .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-      .join("-");
+
+    if (city.includes(" ")) {
+      const cityParts = city.split(" ");
+      cityName.textContent = cityParts
+        .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+        .join(" ");
+    } else if (city.includes("-")) {
+      const dashedCityParts = city.split("-");
+      cityName.textContent = dashedCityParts
+        .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+        .join("-");
+    } else {
+      cityName.textContent = city.charAt(0).toUpperCase() + city.slice(1);
+    }
 
     cityLabel.appendChild(cityCheckbox);
     cityLabel.appendChild(cityCheckboxDiv);
